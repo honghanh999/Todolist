@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit task {% endblock %}
+
+{% block content %} 
+<div class="main-form main-form__task">
+    <form action='/tasks/edit/{{task.id}}', method="POST">
+        <div class="main-form__header">
+            <p>Edit your task </p>
+        </div>
+        <div class="main-form__form">
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    <label for="name">Task:</label>
+                </div>
+                <div>
+                    <input class="form-control", type="text", name="name", id="name" value="{{ task.name }}", aria-label="Edit Task">
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    <label for="description">Description:</label>
+                </div>
+                <div>
+                    <textarea class="form-control form-control__desc", type="text", name="description", id="description" value="{{ task.description }}", arial-label="Edit description">{{ task.description }}</textarea>
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                <input type= 'submit' value='Save' class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

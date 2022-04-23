@@ -1,0 +1,44 @@
+:root {
+    --main-color: rgb(232, 166, 166);
+    --white-color:rgb(255, 255, 255);
+    --placeholder-color: rgb(239, 209, 209);
+    --hover-color:rgb(234, 153, 153);
+
+}
+
+.h1 {
+    color: rebeccapurple;
+}
+
+* {
+    box-sizing: inherit;
+    
+}
+
+html {
+    font-size: 62.5%;
+    line-break: 1.6rem;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    color: rgb(232, 166, 166);
+    background-size: contain;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+

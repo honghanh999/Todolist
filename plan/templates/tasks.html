@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Task page {% endblock %}
+
+{% block content %} 
+<div class="tasks-form">
+    <div class="tasks-form__header">
+        <div>
+            <p class="tasks-form__header-text">Your tasks</p>
+        </div>
+        <div>
+            <a class="btn btn-link" href = "{{url_for('new_task')}}">
+                <i class="fa fa-plus fa-plus--tasks"></i>
+            </a>
+        </div>
+    </div>
+    <div class="tasks-form__body">
+        <ul class = "tasks-form__body-list">
+            {% for task in user.tasks_user %}
+            <div class="tasks-form__body-task">
+                <li class="tasks-form__body-done">
+                    {% if task.done %}
+                    <a href="/tasks/done/{{task.id}}">
+                        <i class="fa fa-check-circle-o"></i>
+                    </a>
+                    {% else %} 
+                    <a href="/tasks/done/{{task.id}}">
+                        <i class="fa fa-circle-o"></i>
+                    </a>
+                    {% endif %}
+                    {% if task.done %} <strike> {% endif %}{{ task.name }} {% if task.done %} </strike>{% endif %}
+                </li>
+                <div class="tasks-form__body-icon">
+                    <a class="tasks-form__body-delete" href ='/tasks/delete/{{task.id}}'>
+                        <i class="fa fa-times"></i>
+                    </a>
+                    <a class="tasks-form__body-edit" href ='/tasks/edit/{{task.id}}'>
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                </div>
+                </div>
+            {% endfor %}
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+    </div>
+    </ul>
+</div>
+{% endblock %}

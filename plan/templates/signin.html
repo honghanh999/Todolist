@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Signin Page {% endblock %}
+
+{% block content %}
+{{ form.hidden_tag() }} 
+<br>
+<br>
+<br>
+<div class="main-form">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="main-form__header">
+            <p>Hey, good to see you again!</p>
+        </div>
+        <div class="main-form__form">
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.username.label() }}
+                </div>
+                <div>
+                    {{ form.username(class = "form-control", placeholder="User name") }}
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.password.label() }}
+                </div>
+                <div>
+                    {{ form.password(class = "form-control", placeholder="Password") }}
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </div>
+        <div class="main-form__footer">
+            <a class="main-form__footer--text">Don't have an account?</a>
+            <a class="btn btn-link" href = "{{ url_for('signup') }}">Sign up</a>
+        </div>
+        <br>
+    </form>
+</div>
+{% endblock %}

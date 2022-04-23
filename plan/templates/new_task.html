@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} New task {% endblock %}
+
+{% block content %} 
+<div class="main-form main-form__task">
+    <form action="/tasks", method="POST">
+        <div class="main-form__header">
+            <p>Add a new task </p>
+        </div>
+        <div class="main-form__form">
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    <label for="name">Task:</label>
+                </div>
+                <div>
+                    <input class="form-control", type="text", name="name", id="name" placeholder="Enter your task", aria-label="Enter Task">
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    <label for="description">Description:</label>
+                </div>
+                <div>
+                    <textarea class="form-control form-control__desc", type="text", name="description", id="description" placeholder="Enter your description", arial-label="Enter description"></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                <input type= 'submit' value='Add' class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

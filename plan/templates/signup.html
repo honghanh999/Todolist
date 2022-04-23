@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} Signup Page {% endblock %}
+
+{% block content %} 
+<div class="main-form main-form__reg">
+    <form method="POST">
+        {{ form.hidden_tag() }} 
+        <div class="main-form__header">
+            <p>Create your account</p>
+        </div>
+        <div class="main-form__form">
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.username.label() }}
+                </div>
+                <div>
+                    {{ form.username(class = "form-control", placeholder="User name") }}
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.email_address.label() }}
+                </div>
+                <div>
+                    {{ form.email_address(class = "form-control", placeholder="Email Address") }}
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.password1.label() }}
+                </div>
+                <div>
+                    {{ form.password1(class = "form-control", placeholder="Password") }}
+                </div>
+            </div>
+            <div class="main-form__group">
+                <div class="main-form__label">
+                    {{ form.password2.label() }}
+                </div>
+                <div>
+                    {{ form.password2(class = "form-control", placeholder="Confirm Password") }}
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </div>
+        <div class="main-form__footer">
+            <a class="main-form__footer--text">Already have an account?</a>
+            <a class="btn btn-link" href = "{{ url_for('signin') }}">Sign in</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
